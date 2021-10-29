@@ -9,8 +9,8 @@
 
 << [link to demo presentation slides](#) >>
 
-### Team: << team name >>
-#### << Team Members >>
+### Team: Ampalker
+#### John Paul Alker, Paul Ampadu
 
 ***
 
@@ -59,11 +59,11 @@ The Project is broken down into the following file structure:
 
 << Worked as integration specialist by... >>
 
-### Front End Specialist - << name >>
+### Front End Specialist - Paul Ampadu
 
 << Front-end lead conducted significant research on... >>
 
-### Back End Specialist - << name >>
+### Back End Specialist - John Paul Alker
 
 << The back end specialist... >>
 
