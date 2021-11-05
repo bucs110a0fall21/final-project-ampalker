@@ -22,8 +22,11 @@
 ## User Interface Design *(Front End Specialist)*
 * << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. >>
     * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
-                   assets/Vagrant Title PNG.png
-   *![level sketch](assets/level sketch.png)
+![image](https://user-images.githubusercontent.com/89813338/140586605-9adc09ef-7bd7-4390-bd09-4385bbdeb792.png)
+   
+   
+   ![image](https://user-images.githubusercontent.com/89813338/140586631-119bb119-3c3b-423d-b4b5-cb6f81a35372.png)
+
 * << You should also have a screenshot of each screen for your final GUI >>
 
 ***        
