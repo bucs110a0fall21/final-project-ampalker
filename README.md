@@ -25,8 +25,7 @@
 ![image](https://user-images.githubusercontent.com/89813338/140586605-9adc09ef-7bd7-4390-bd09-4385bbdeb792.png)
    
    
-   ![image](https://user-images.githubusercontent.com/89813338/140586631-119bb119-3c3b-423d-b4b5-cb6f81a35372.png)
-
+   ![image](assets/vagrant-level-demo.png)
 * << You should also have a screenshot of each screen for your final GUI >>
 
 ***        
