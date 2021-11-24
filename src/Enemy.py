@@ -1,22 +1,51 @@
 import pygame
 import random
 
-class Enemy(pygame.sprite.Sprite, starting_dir1, starting_dir2, ending_dir1, ending_dir2):
-	def __init__(self, direction):
+#we could probably use the same class for the boss
+
+class Enemy(pygame.sprite.Sprite):
+	def __init__(self, image, speed, x, y):
 		"""
-			creates an enemy object
-			args: int, self
+			this inits sprite functions and sets instance variables
+			args: self, str, int
 			return: none
 		"""
-		self.image = pygame.image.load("assets/[enemy image].png").convert_alpha()
-		self.image.get_rect().x = random.randrange(starting_dir1,ending_dir1)
-		self.image.get_rect().y = random.randrange(starting_dir2, ending_dir2)
-		self.direction = direction
-		self.kill = False
-	def killed(self):
+		pygame.sprite.Sprite.__init__(self)
+		self.image = pygame.image.load(image).convert_alpha()
+		self.enemy_tag = id(self)
+		self.rect = self.image.get_rect()
+		self.speed = speed
+		self.rect.x = x
+		self.rect.y = y
+	def update(self):
 		"""
-			returns self.kill if the enemy is killed, which will return False
+			this dictates the movement of the enemy (up or down) left by chance, with 1/3 chance no movement occuring
+			args: self
+			return: int
+		"""
+		movement_chance = random.randrange(6)
+		if movement_chance == 0:
+			self.rect.x -= 1
+			self.rect.y = self.rect.y
+		elif movement_chance == 1:
+			self.rect.x += 1
+			self.rect.y = self.rect.y
+		elif movement_chance == 2:
+			self.rect.x = self.rect.x
+			self.rect.y -= 1
+		elif movement_chance == 3:
+			self.rect.x = self.rect.x
+			self.rect.y += 1
+		elif movement_chance == 4:
+			self.rect.x = self.rect.x
+			self.rect.y = self.rect.y
+		elif movement_chance == 5:
+			self.rect.x = self.rect.x
+			self.rect.y = self.rect.y
+	def kill(self):
+		"""
+			this returns false for when the enemy has been killed
 			args: self
 			return: bool
 		"""
-		return self.kill
+		return False

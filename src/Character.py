@@ -1,37 +1,59 @@
 import pygame
-
+import random
 class Character(pygame.sprite.Sprite):
-	def __init__(self, direction, max_hit_points, char_speed):
+	def __init__(self, rect_x, rect_y, name, image, speed, max_hit_points, direction):
 		"""
-			creates a character object
-			args: 3 integers, self
+			creates a character object and sets instance variables
+			args: self, int, str
 			return: none
 		"""
-		super().__init__()
+		pygame.sprite.Sprite.__init__(self)
+		self.image = pygame.image.load(image).convert_alpha()
 		self.max_hit_points = max_hit_points
-		self.image = pygame.image.load("assets/[character file name].png").convert_alpha()
-		self.char_speed = char_speed
-		self.image.get_rect().x = 10
-		self.image.get_rect().y = 10
+		self.name = name
+		self.speed = speed
+		self.rect = self.image.get_rect()
+		self.rect.x = rect_x
+		self.rect.y = rect_y
 		self.direction = direction
+
 	def movement(self):
 		"""
 			shows the movement of the character
 			args: self
 			return: rectangle object
 		"""
-		if self.direction == "Up":
-			self.image.get_rect().y = self.image.get_rect().y - self.char_speed
-		elif self.direction == "Down":
-			self.image.get_rect().y = self.image.get_rect().y + self.char_speed
-		elif self.direction == "Left":
-			self.image.get_rect().x = self.image.get_rect().x - self.char_speed
+		if self.direction == "Left":
+			self.rect.x = self.rect.x - self.speed
 		elif self.direction == "Right":
-			self.image.get_rect().x = self.image.get_rect().x + self.char_speed
-	def shoot(self):
+			self.rect.x = self.rect.y + self.speed
+		elif self.direction == "Up":
+			self.rect.y = self.rect.y - self.speed
+		elif self.direction == "Down":
+			self.rect.y = self.rect.y + self.speed
+	def swing_sword(self):
 		"""
-			returns true for if the character shoots
+			returns true for if the character successfully swings sword with 2/5 chance of missing
 			args: self
 			return: bool
 		"""
-		return True
+		swing_chance = random.randrange(5)
+		if swing_chance == 0:
+			print("Hit!")
+			return True
+		if swing_chance == 1:
+			print("Hit!")
+			return True
+		if swing_chance == 2:
+			print("Hit!")
+			return True
+		if swing_chance == 3:
+			print("Miss!")
+			return False
+		if swing_chance == 4:
+			print("Miss!")
+			return False
+
+
+
+
