@@ -1,0 +1,11 @@
+Wallclimb?
+Melee or ranged? impliment both?
+
+enemy ideas - 
+    basic enemy, damages player character on contact
+    shooting enemy, enemy with more than 1 hp
+
+bosses?
+
+level design - 
+    basic platformer/roguelite
