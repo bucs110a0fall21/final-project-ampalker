@@ -1,7 +1,8 @@
 import pygame
 import random
-class Character(pygame.sprite.Sprite):
-	def __init__(self, rect_x, rect_y, name, image, speed, max_hit_points, direction):
+class Hero(pygame.sprite.Sprite):
+	
+	def __init__(self, rect_x, rect_y, name, image, speed, max_hit_points):
 		"""
 			creates a character object and sets instance variables
 			args: self, int, str
@@ -15,8 +16,8 @@ class Character(pygame.sprite.Sprite):
 		self.rect = self.image.get_rect()
 		self.rect.x = rect_x
 		self.rect.y = rect_y
-		self.direction = direction
-
+		self.spawn = [50,50]
+		
 	def movement(self):
 		"""
 			shows the movement of the character
