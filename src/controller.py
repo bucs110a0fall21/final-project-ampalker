@@ -2,13 +2,14 @@ import pygame
 import sys
 from src import character
 #from src import enemy
-from pygame.constants import K_LEFT, K_RIGHT, KEYDOWN, KEYUP
+from pygame.constants import K_LEFT, K_RETURN, K_RIGHT, KEYDOWN, KEYUP
 
 
 class Controller:
     clock = pygame.time.Clock()
     def __init__(self):
         pygame.init()
+        self.state = "MENU"
         self.window = (500,500)
         self.screen = pygame.display.set_mode(self.window)
         self.background = pygame.Surface(self.window)
@@ -22,13 +23,17 @@ class Controller:
                 self.menuloop()
             elif self.state == "GAME":
                 self.gameloop()
-            elif self.state == "GAMEOVER":
-                self.endloop()
+            #elif self.state == "GAMEOVER":
+               # self.endloop()
     
-    def menuloop():
+    def menuloop(self):
         """
         menu code
         """
+        while self.state == "MENU":
+            pygame.image.load('assets/Vagrant Title PNG.png')
+
+
 
     def gameloop(self):
         for self.event in pygame.event.get():
@@ -40,18 +45,24 @@ class Controller:
 
     def keyboard(self):
         self.move_left = False
-        self.move_right = True
+        self.move_right = False
+        self.start_key = False
+        self.back_key = False
         for event in pygame.event.get():
             if event.type == KEYDOWN:
                 if event.key == K_RIGHT:
                     self.move_right == True
                 if event.key == K_LEFT:
                     self.move_left == True
+                if event.key == K_RETURN:
+                    self.start_key = True
             if event.type == KEYUP:
                 if event.key == K_RIGHT:
                     self.move_right == False
                 if event.key == K_LEFT:
                     self.move_left == False
+                if event.key == K_RETURN:
+                    self.start_key = False
 
 
 

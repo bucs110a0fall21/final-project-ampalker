@@ -10,7 +10,7 @@ def main():
 
 
 	g1 = controller.Controller()
-	g1.mainLoop	
+	g1.mainLoop()
 
 	#Create an instance on your controller object
 	#Call your mainloop
