@@ -8,9 +8,10 @@ class Controller:
     clock.tick(60)
     def __init__(self):
         pygame.init()
+        white = (255, 255, 255)
         self.size = ((800,500))
         self.screen = pygame.display.set_mode(self.size)
-        self.screen.fill("white")
+        self.screen.fill(white)
         self.vagabond = Character.Hero(7,10,"fortemps",'assets/Vagabond.png',10,4)
         self.state = "GAME"
        # self.enemy = enemy.Enemy()
