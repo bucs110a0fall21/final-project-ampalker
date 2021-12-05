@@ -1,5 +1,5 @@
 #import your controller
-from src import controller
+from src import Controller
 #<<<<<<< HEAD
 
 def main():
@@ -9,7 +9,7 @@ def main():
 	print("Frontend is:", team["frontend"])
 
 
-	g1 = controller.Controller()
+	g1 = Controller.Controller()
 	g1.mainloop()
 
 	#Create an instance on your controller object
