@@ -1,5 +1,4 @@
-import pygame, sys
-from src import controller
+import pygame
 
 class MakeButton:
     def __init__(self,x,y,image,scale):

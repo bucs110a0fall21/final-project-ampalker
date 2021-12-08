@@ -1,14 +1,17 @@
 import os, pygame, sys
 from pygame import mouse
 from pygame.constants import K_LEFT, K_RETURN, K_RIGHT, KEYDOWN, KEYUP
-from src import Character, Button, Enemy
+from src import Character, Button, Tiles, Enemy, Level
+from src.Constants import *
+
+
 
 
 class Controller:
     def __init__(self):
         pygame.init()
         self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode((800,500))
+        self.screen = pygame.display.set_mode((screen_width,screen_height))
         self.vagabond = Character.Hero(7,10,"fortemps",'assets/Vagabond.png',10,4)
         self.title_img = pygame.image.load(os.path.join('assets', 'Vagrant Title.png'))
         self.start_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Start.png')) 
@@ -20,17 +23,20 @@ class Controller:
         menu code
         """
         self.title_img = self.title_img.convert_alpha()
-        self.title = Button.MakeButton(120,25,self.title_img,2)  
+        self.title = Button.MakeButton(235,25,self.title_img,2.5)  
         self.start_button_img = self.start_button_img.convert_alpha()
-        self.start_button = Button.MakeButton(320, 350,self.start_button_img,1)
+        self.start_button = Button.MakeButton(465, 420,self.start_button_img,1.5)
         self.exit_button_img = self.exit_button_img.convert_alpha()
-        self.exit_button = Button.MakeButton(360,450,self.exit_button_img,1)
+        self.exit_button = Button.MakeButton(525,570,self.exit_button_img,1.5)
         while True:
             for self.event in pygame.event.get():
                 self.screen.fill((49,50,51))
                 self.title.render(self.screen)
                 self.start_button.render(self.screen)
                 self.exit_button.render(self.screen)
+                # Tile = Tiles.Tile
+                # test_tile = pygame.sprite.Group(Tile((100,100), 200))
+                # test_tile.draw(self.screen)
                 mouse_pos = pygame.mouse.get_pos()
                 if self.start_button.clicked(mouse_pos):
                     print("start button")
@@ -45,32 +51,21 @@ class Controller:
         
 
 
-    def gameloop(self):
-        self.screen.fill((250,250,250))
-        pygame.display.flip()
-        for self.event in pygame.event.get():
-            if self.event.type == pygame.QUIT:
-                self.exitloop()
-        pygame.display.update()
+    def gameloop(self):        
+        while True:
+            level = Level.Level(level_map,self.screen)
+            for self.event in pygame.event.get():
+                self.screen.fill((0,0,0))
+                level.render()
+                pygame.display.flip()
+                if self.event.type == pygame.QUIT:
+                    self.exitloop()
+            pygame.display.update()
 
     def exitloop(self):
         pygame.quit()
         sys.exit()
     
-    # def level_layout(self):
-    #     level_map = [
-    #     '                               ',
-    #     '                               ',
-    #     '                               ',
-    #     '                          XX   ',
-    #     '                    XXX        ',
-    #     '       X  XXXXX                ',
-    #     '       X  XXXXX         XXXX   ',
-    #     '   XXXXX  XXXXXXXX     XXXXX   ',
-    #     'XXXXXXXX  XXXXXXXXX   XXXXXX   ']
-
-
-
     def keyboard(self):
         move_left = False
         move_right = False
