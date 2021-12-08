@@ -4,13 +4,13 @@ Constants
 level_map = [
 '                               ',
 '                               ', 
-'                               ',
-'                               ',
-'                          XX   ',
+'   XXXXX                       ',
+'   XXXXXXXX                    ',
+'                     XX        ',
 '                    XXX        ',
 '                    XXX        ',
-'       X  XXXXX                ',
-'       X  XXXXX         XXXX   ',
+'          XXXXX                ',
+'   P  XX  XXXXX         XXXX   ',
 '   XXXXX  XXXXXXXX     XXXXX   ',
 'XXXXXXXX  XXXXXXXXX   XXXXXX   ']
 tile_size = 64

@@ -12,7 +12,6 @@ class Controller:
         pygame.init()
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((screen_width,screen_height))
-        self.vagabond = Character.Hero(7,10,"fortemps",'assets/Vagabond.png',10,4)
         self.title_img = pygame.image.load(os.path.join('assets', 'Vagrant Title.png'))
         self.start_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Start.png')) 
         self.exit_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Exit.png'))
@@ -53,39 +52,40 @@ class Controller:
 
     def gameloop(self):        
         while True:
-            level = Level.Level(level_map,self.screen)
             for self.event in pygame.event.get():
-                self.screen.fill((0,0,0))
-                level.render()
-                pygame.display.flip()
                 if self.event.type == pygame.QUIT:
                     self.exitloop()
-            pygame.display.update()
+
+            level = Level.Level(level_map,self.screen)
+            self.screen.fill((0,0,0))
+            level.render()
+            pygame.display.flip()
+            
 
     def exitloop(self):
         pygame.quit()
         sys.exit()
     
-    def keyboard(self):
-        move_left = False
-        move_right = False
-        start_key = False
-        back_key = False
-        for event in pygame.event.get():
-            if event.type == KEYDOWN:
-                if event.key == K_RIGHT:
-                    move_right == True
-                if event.key == K_LEFT:
-                    move_left == True
-                if event.key == K_RETURN:
-                    start_key = True
-            if event.type == KEYUP:
-                if event.key == K_RIGHT:
-                    move_right == False
-                if event.key == K_LEFT:
-                    move_left == False
-                if event.key == K_RETURN:
-                    start_key = False
+    # def keyboard(self):
+    #     move_left = False
+    #     move_right = False
+    #     start_key = False
+    #     back_key = False
+    #     for event in pygame.event.get():
+    #         if event.type == KEYDOWN:
+    #             if event.key == K_RIGHT:
+    #                 move_right == True
+    #             if event.key == K_LEFT:
+    #                 move_left == True
+    #             if event.key == K_RETURN:
+    #                 start_key = True
+    #         if event.type == KEYUP:
+    #             if event.key == K_RIGHT:
+    #                 move_right == False
+    #             if event.key == K_LEFT:
+    #                 move_left == False
+    #             if event.key == K_RETURN:
+    #                 start_key = False
                 
 
 
