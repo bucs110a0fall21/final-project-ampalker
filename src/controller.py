@@ -55,11 +55,11 @@ class Controller:
             for self.event in pygame.event.get():
                 if self.event.type == pygame.QUIT:
                     self.exitloop()
-
-            level = Level.Level(level_map,self.screen)
+            level = Level.Level(level_map,self.screen)   
             self.screen.fill((0,0,0))
             level.render()
-            pygame.display.flip()
+            pygame.display.flip()                    
+         
             
 
     def exitloop(self):
