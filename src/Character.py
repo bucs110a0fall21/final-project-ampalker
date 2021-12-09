@@ -1,6 +1,7 @@
 import pygame, random, os
 from pygame import key
 from src import Controller
+from src.Constants import screen_height
 class Hero(pygame.sprite.Sprite):
 	
 	def __init__(self,x,y):
@@ -12,48 +13,42 @@ class Hero(pygame.sprite.Sprite):
 		pygame.sprite.Sprite.__init__(self)
 		image = pygame.image.load(os.path.join('assets','Vagabond.png'))
 		self.image= image.convert_alpha()
-		self.image = pygame.transform.scale(self.image,(64,64))
+		self.image = pygame.transform.scale(self.image,(48,48))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
 		self.rect.y = y
+		self.y_vel = 0
+		self.jump = False
 
-	
-
-	def movement(self, x, interval):
-		x = x
-		#y = y
-		interval = interval
-		keys = pygame.key.get_pressed()
-		if keys[pygame.K_LEFT]:
-			x -= interval
-		if keys[pygame.K_RIGHT]:
-			x += interval
-		#if keys[pygame.K_UP]:
-		#	y -= interval
-		#if keys[pygame.K_DOWN]
-		#	y += interval
-
-
-
-
-
-
-		
 	def movement(self,direction):	
 		"""
-		move
-		args: self
-		return: rectangle object
+		movement of the character
+		args: self, direction
+		return: none
 		"""
+		#horizontal movement
 		if direction == "Left":
-			self.rect.x -= 3
-		elif direction == "Right":
-			self.rect.x += 3
-
+			self.rect.x -= 1
+		if direction == "Right":
+			self.rect.x += 1
+		#vertical movemnt
+		if direction == "Up" and self.jump == False:
+			self.y_vel = -1
+			self.jump = True
+		#gravity
+		if direction == "None":
+			self.jump = False
+			self.y_vel += .5
+			if self.y_vel > 2:
+				self.y_vel = 2
+		self.rect.y += self.y_vel
 		
 		
+		#bottom test
+		if self.rect.bottom > screen_height:
+			self.rect.bottom = screen_height
+			self.y_vel = 0
 
-	
 	def update(self,screen):
 		screen.blit(self.image, self.rect)
 

@@ -1,4 +1,5 @@
 import os, pygame, sys
+from posix import RTLD_GLOBAL
 from pygame import mouse
 from pygame import transform
 from pygame import key
@@ -21,7 +22,7 @@ class Controller:
         self.start_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Start.png')) 
         self.exit_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Exit.png'))
         #self.enemy = enemy.Enemy()
-        self.Vagabond = Character.Hero(128,128)
+        self.Vagabond = Character.Hero(48,500)
         
     def mainloop(self):
         """
@@ -56,19 +57,30 @@ class Controller:
             self.level(level_map,self.screen) 
             self.screen.fill((0,0,0))
             self.render_level()
-            self.move = True
             self.Vagabond.update(self.screen)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
 
-                key = pygame.key.get_pressed()
-                if key[pygame.K_a]:
-                    self.Vagabond.movement("Left")
-                if key[pygame.K_d]:
-                    self.Vagabond.movement("Right")
+            #keyboard inputs
+            key = pygame.key.get_pressed()
+            if key[pygame.K_a]:
+                self.Vagabond.movement("Left")
+            if key[pygame.K_d]:
+                self.Vagabond.movement("Right")
+            if key[pygame.K_SPACE]:
+                self.Vagabond.movement("Up")
+            if key[pygame.K_SPACE] == False:
+                self.Vagabond.movement("None")
+            else:
+                self.Vagabond.movement("None")
                 
             pygame.display.update()
+    
+
+
+    
+
 
     def level(self, level_data, surface):
         self.display_surface = surface
