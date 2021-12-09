@@ -1,9 +1,7 @@
 import pygame
 import random
-
 from pygame import key
 from src import Controller
-from pygame.constants import K_LEFT, K_RETURN, K_RIGHT, KEYDOWN, KEYUP, K_l
 class Hero(pygame.sprite.Sprite):
 	
 	def __init__(self,pos,name):
@@ -17,45 +15,30 @@ class Hero(pygame.sprite.Sprite):
 		self.image.fill((70,40,60))
 		self.rect = self.image.get_rect(topleft = pos)
 		self.name = name
-		self.direction = pygame.math.Vector2(0,0)
 
 	
 
 		
-	def movement(self):
+	def movement(self,direction):	
 		"""
-			shows the movement of the character
-			args: self
-			return: rectangle object
+		shows the movement of the character
+		args: self
+		return: rectangle object
 		"""
-		# move_right = False
-		# move_left = False
-		# for event in pygame.event.get():
-		# 	if event.type == KEYDOWN:
-		# 		if event.key == K_RIGHT:
-		# 			move_right == True
-		# 		if event.key == K_LEFT:
-		# 			move_left == True
-		# 	if event.type == KEYUP:
-		# 		if event.key == K_RIGHT:
-		# 			move_right == False
-		# 		if event.key == K_LEFT:
-		# 			move_left == False
-		# 	if move_right == True:
-		# 		self.direction.x = 1
-		# 	if move_left == False:
-		# 		self.direction.y = -1
-		keys = pygame.key.get_pressed()
-		if keys[pygame.K_RIGHT]:
-			self.direction.x = 1 
-		elif keys[pygame.K_LEFT]:
-			self.direction.x = -1
-		else:
-			self.direction.x = 0
+		if direction == "Left":
+			self.rect.x = self.rect.x - 2
+		elif direction == "Right":
+			self.rect.x = self.rect.y + 2
+		# elif direction == "Up":
+		# 	self.rect.y = self.rect.y - self.speed
+		# elif direction == "Down":
+		# 	self.rect.y = self.rect.y + self.speed
+		
+
 	
-	def update(self):
-		self.movement()
-		self.rect.x += self.direction.x 
+	# def update(self):
+	# 	self.movement()
+	# 	self.rect.x += self.direction.x 
 
 	def swing_sword(self):
 		"""
