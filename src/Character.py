@@ -1,44 +1,43 @@
-import pygame
-import random
+import pygame, random, os
 from pygame import key
+from pygame import rect
 from src import Controller
 class Hero(pygame.sprite.Sprite):
 	
-	def __init__(self,pos,name):
+	def __init__(self,x,y):
 		"""
 			creates a character object and sets instance variables
 			args: self, int, str
 			return: none
 		"""
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.Surface((32,64))
-		self.image.fill((70,40,60))
-		self.rect = self.image.get_rect(topleft = pos)
-		self.name = name
+		image = pygame.image.load(os.path.join('assets','Vagabond.png'))
+		self.image= image.convert_alpha()
+		self.image = pygame.transform.scale(self.image,(64,64))
+		self.rect = self.image.get_rect()
+		self.rect.x = x
+		self.rect.y = y
 
 	
 
 		
 	def movement(self,direction):	
 		"""
-		shows the movement of the character
+		move
 		args: self
 		return: rectangle object
 		"""
 		if direction == "Left":
-			self.rect.x = self.rect.x - 2
+			self.rect.x -= 3
 		elif direction == "Right":
-			self.rect.x = self.rect.y + 2
-		# elif direction == "Up":
-		# 	self.rect.y = self.rect.y - self.speed
-		# elif direction == "Down":
-		# 	self.rect.y = self.rect.y + self.speed
+			self.rect.x += 3
+
+		
 		
 
 	
-	# def update(self):
-	# 	self.movement()
-	# 	self.rect.x += self.direction.x 
+	def update(self,screen):
+		screen.blit(self.image, self.rect)
 
 	def swing_sword(self):
 		"""
