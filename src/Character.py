@@ -1,6 +1,5 @@
 import pygame, random, os
 from pygame import key
-from pygame import rect
 from src import Controller
 class Hero(pygame.sprite.Sprite):
 	
@@ -19,6 +18,25 @@ class Hero(pygame.sprite.Sprite):
 		self.rect.y = y
 
 	
+
+	def movement(self, x, interval):
+		x = x
+		#y = y
+		interval = interval
+		keys = pygame.key.get_pressed()
+		if keys[pygame.K_LEFT]:
+			x -= interval
+		if keys[pygame.K_RIGHT]:
+			x += interval
+		#if keys[pygame.K_UP]:
+		#	y -= interval
+		#if keys[pygame.K_DOWN]
+		#	y += interval
+
+
+
+
+
 
 		
 	def movement(self,direction):	
