@@ -39,7 +39,6 @@ Our project is of of a game with one main character and enemies that move back a
         * Pygame is a game library for python
 * Class Interface Design
     * ![class diagram](assets/milestone3.png)
-    * << You should have a list of each of your classes with a description. >>
 
 ## Project Structure *(Software Lead)*
 
