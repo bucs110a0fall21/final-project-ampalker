@@ -22,9 +22,9 @@ class Hero(pygame.sprite.Sprite):
 
 	def movement(self,direction):	
 		"""
-		movement of the character
-		args: self, direction
-		return: none
+			movement of the character, gravity
+			args: self, direction
+			return: none
 		"""
 		#horizontal movement
 		if direction == "Left":
@@ -32,24 +32,21 @@ class Hero(pygame.sprite.Sprite):
 		if direction == "Right":
 			self.rect.x += 1
 		#vertical movemnt
-		if direction == "Up" and self.jump == False:
-			self.y_vel = -1
-			self.jump = True
-		#gravity
-		if direction == "None":
-			self.jump = False
-			self.y_vel += .5
-			if self.y_vel > 2:
-				self.y_vel = 2
-		self.rect.y += self.y_vel
-		
-		
-		#bottom test
+		if direction == "Up":
+			self.rect.y -= 1
+		if direction == "Down":
+			self.rect.y += 1
+		#bottom 
 		if self.rect.bottom > screen_height:
 			self.rect.bottom = screen_height
 			self.y_vel = 0
 
 	def update(self,screen):
+		"""
+			makes the character show up on screen
+			args: self
+			return: none
+		"""
 		screen.blit(self.image, self.rect)
 
 	def swing_sword(self):

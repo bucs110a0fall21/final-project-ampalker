@@ -17,31 +17,32 @@ class Enemy(pygame.sprite.Sprite):
 		self.end_coord = end_coord
 		self.sprite_counter = 0
 		self.speed = 5
-#	def update(self):
-#		"""
-#			this dictates the movement of the enemy (up or down) left by chance, with 1/3 chance no movement occuring
-#			args: self
-#			return: int
-#		"""
-#		movement_chance = random.randrange(6)
-#		if movement_chance == 0:
-#			self.rect.x -= 1
-#			self.rect.y = self.rect.y
-#		elif movement_chance == 1:
-#			self.rect.x += 1
-#			self.rect.y = self.rect.y
-#		elif movement_chance == 2:
-#			self.rect.x = self.rect.x
-#			self.rect.y -= 1
-#		elif movement_chance == 3:
-#			self.rect.x = self.rect.x
-#			self.rect.y += 1
-#		elif movement_chance == 4:
-#			self.rect.x = self.rect.x
-#			self.rect.y = self.rect.y
-#		elif movement_chance == 5:
-#			self.rect.x = self.rect.x
-#			self.rect.y = self.rect.y
+		
+	def update(self):
+		"""
+			this dictates the movement of the enemy (up or down) left by chance, with 1/3 chance no movement occuring
+			args: self
+			return: int
+		"""
+		movement_chance = random.randrange(6)
+		if movement_chance == 0:
+			self.rect.x -= 1
+			self.rect.y = self.rect.y
+		elif movement_chance == 1:
+			self.rect.x += 1
+			self.rect.y = self.rect.y
+		elif movement_chance == 2:
+			self.rect.x = self.rect.x
+			self.rect.y -= 1
+		elif movement_chance == 3:
+			self.rect.x = self.rect.x
+			self.rect.y += 1
+		elif movement_chance == 4:
+			self.rect.x = self.rect.x
+			self.rect.y = self.rect.y
+		elif movement_chance == 5:
+			self.rect.x = self.rect.x
+			self.rect.y = self.rect.y
 
 
 
