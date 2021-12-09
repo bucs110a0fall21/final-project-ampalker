@@ -1,6 +1,6 @@
 import pygame, random, os
 from pygame import key
-from src import Controller
+from src import controller
 from src.Constants import screen_height
 class Hero(pygame.sprite.Sprite):
 	
