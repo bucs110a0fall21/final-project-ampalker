@@ -1,11 +1,11 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
-# << Project Title >>
+# Vagabond Game
 ## CS 110 Final Project
-### << Semester, Year >>
+### Fall 2021
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
-<< [https://github.com/<repo>](#) >>
+[https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#](#)
 
 << [link to demo presentation slides](#) >>
 
@@ -15,32 +15,30 @@
 ***
 
 ## Project Description *(Software Lead)*
-<< Give an overview of your project >>
+Our project is of of a game with one main character and enemies that move back and forth. The main character can move horizontally and jump, and get into fights with enemies. When the enemy and main character fight, the main character most likely win the fight, but there is a small chance that he will lose to the enemy. If the main character loses all his health points, the game will be over. If the main character does not, he will win. 
 
 ***    
 
 ## User Interface Design *(Front End Specialist)*
-* << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. >>
-    * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
+
 ![image](https://user-images.githubusercontent.com/89813338/140586605-9adc09ef-7bd7-4390-bd09-4385bbdeb792.png)
+
+* This is the start menu
    
    
    ![image](assets/vagrant-level-demo.png)
-* << You should also have a screenshot of each screen for your final GUI >>
+
+* This is the first design concept for the map
 
 ***        
 
 ## Program Design *(Backend Specialist)*
 * Non-Standard libraries
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. >>
-    * For each additional module you should include
-        * url for the module documentation
-        * a short description of the module
+    * Pygame 
+        * https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#
+        * Pygame is a game library for python
 * Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). >>
-        * ![class diagram](assets/milestone3.png)
-    * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
-* Classes
+    * ![class diagram](assets/milestone3.png)
     * << You should have a list of each of your classes with a description. >>
 
 ## Project Structure *(Software Lead)*
@@ -57,28 +55,33 @@ The Project is broken down into the following file structure:
 ***
 
 ## Tasks and Responsibilities *(Software Lead)*
-* You must outline the team member roles and who was responsible for each class/method, both individual and collaborative.
 
-### Software Lead - << name >>
+### Software Lead - Paul Ampadu and John Paul Alker
 
-<< Worked as integration specialist by... >>
+We both worked on the integration of classes and the controller, and collaborated on design features of the project. We intermingled in both front-end and back-end roles, collaborating with each other.
 
 ### Front End Specialist - Paul Ampadu
 
-<< Front-end lead conducted significant research on... >>
+Front-end lead constructed the GUI and controller class for the game. Also aided with classes, specifically the Level, Constants, and Button class. Much of the work was collaborative between front end and back end. 
 
 ### Back End Specialist - John Paul Alker
 
-<< The back end specialist... >>
+Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and aided with the construction of the controller. Much of the work was collaborative between front end and back end. 
 
 ## Testing *(Software Lead)*
-* << Describe your testing strategy for your project. >>
-    * << Example >>
+* After all of the code was finished for our final project, we pushed everything that we had to github and ran the program. We went through every feature in the game to see if it worked, recording the results in the ATP. For example, the program was to exit after the exit button on the menu was pressed. To see if this worked, we ran the code and clicked on the exit menu button after the program ran. If it worked, the program was to close. When we did end up getting it to close, we pushed the code to github. 
 
 * Your ATP
 
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
-|  1  | Run Counter Program  | GUI window appears with count = 0  |          |
-|  2  | click count button  | display changes to count = 1 |                 |
-etc...
+|  1  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |          |
+|  2  | Click exit button  | Program exits |                 |
+|  3  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |          |
+|  4  | Click start button  | Map appears with character and enemies|                 |
+|  5  | Press the left arrow key  | Character moves left |                 |
+|  6  | Press the right arrow key  | Character moves right |                 |
+|  7  | Press the space key  | Character jumps |                 |
+|  8  | Collide character with an enemy | Character either loses a hitpoint or enemy vanishes |                 |
+|  9  | Character collides with enemies until it loses all hitpoints or wins game | Character either dies and game over screen appears, or the a game won screen appears, respectively |                 |
+|  10  | User exits the program by pressing the exit key | Program closes |                 |
