@@ -14,7 +14,7 @@
 ***
 
 ## Project Description *(Software Lead)*
-Our project is of a game that has an enemy ghost move randomly on the screen. The main character has unlimited double jumps (to kill the ghosts) and fights ghosts in the game. When the enemy collides with the ghost, there is a chance that the character himself will die, because he cannot win every battle. In that event, he will lose a hitpoint. After he loses all of his hitpoints, a game over screen will appear. If he kills all enemies on the screen, however, a game won screen will appear.
+Our project is of a game that has an enemy ghost move randomly on the screen. The main character has unlimited double jumps (to hit the ghosts) on the screen. There is a 3/5 chance that there will be a successful hit. If he does successfully hit the ghost, a dog fact appears on the screen as a reward. If he does not, "Miss!" Will appear and there will be no dog fact.
 
 ***    
 
