@@ -14,7 +14,7 @@
 ***
 
 ## Project Description *(Software Lead)*
-Our project is of a game that has an enemy ghost move randomly on the screen. The main character has unlimited double jumps (to hit the ghosts) on the screen. There is a 3/5 chance that there will be a successful hit. If he does successfully hit the ghost, a dog fact appears on the screen as a reward. If he does not, "Miss!" Will appear and there will be no dog fact.
+Our project is of a game that has an enemy ghost move randomly on the screen. The main character has unlimited double jumps (to hit the ghosts) on the screen. There is a 3/5 chance that there will be a successful hit. If he does successfully hit the ghost, a dog fact appears on the screen as a reward. If he does not, "Miss!" will appear and there will be no dog fact.
 
 ***    
 
