@@ -49,7 +49,7 @@ Our project is of a game that has an enemy ghost move randomly on the screen. Th
 
 
     * This is the newer class interface
-    * ![class diagram](assets/class structure.png)
+    * ![image](assets/class structure.png)
 
 ## Project Structure *(Software Lead)*
 
