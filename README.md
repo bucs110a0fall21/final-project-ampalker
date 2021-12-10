@@ -69,7 +69,7 @@ Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and 
 ## Testing *(Software Lead)*
 * After all of the code was finished for our final project, we pushed everything that we had to github and ran the program. We went through every feature in the game to see if it worked, recording the results in the ATP. For example, the program was to exit after the exit button on the menu was pressed. To see if this worked, we ran the code and clicked on the exit menu button after the program ran. If it worked, the program was to close. When we did end up getting it to close, we pushed the code to github. 
 
-* Your ATP
+ Your ATP
 
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
@@ -82,4 +82,4 @@ Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and 
 |  7  | Press the space key  | Character jumps |         correct        |
 |  8  | Press the space key many times | Character jumps many times (double jump feature) |        correct         |
 |  9  | Collide character with an enemy | A "Hit!" and random dog fact will appear, or or a "Miss!" will appear |        correct         |
-|  11  | User exits the program by pressing the exit key | Program closes |        correct         |
+|  11  | User exits the program by pressing the top right exit button | Program closes |        correct         |
