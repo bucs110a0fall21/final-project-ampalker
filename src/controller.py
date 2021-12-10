@@ -60,11 +60,11 @@ class Controller:
                 if event.type == pygame.QUIT:
                     self.exitloop()
                 
-                if pygame.Rect.colliderect(self.Vagabond, self.enemy):
-                    if self.Vagabond.swing_sword() == True:
-                        self.enemy.kill()
-                    elif self.Vagabond.swing_sword() == False:
-                        self.gameover()
+                #if pygame.Rect.colliderect(self.Vagabond, self.enemy):
+                 #   if self.Vagabond.swing_sword() == True:
+                  #      self.enemy.kill()
+                   # elif self.Vagabond.swing_sword() == False:
+                    #    self.gameover()
 
             self.enemy.move()
 
