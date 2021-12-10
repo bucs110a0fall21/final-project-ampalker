@@ -29,6 +29,12 @@ Our project is of a game that has an enemy ghost move randomly on the screen. Th
 
 * This is the first design concept for the map
 
+
+* This is the final game GUI
+
+
+   ![image](assets/guiguiguigui.png)
+
 ***        
 
 ## Program Design *(Backend Specialist)*
