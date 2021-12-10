@@ -97,11 +97,11 @@ We both worked on the integration of classes and the controller, and collaborate
 
 ### Front End Specialist - Paul Ampadu
 
-Front-end lead constructed the GUI and controller class for the game. Also aided with classes, specifically the Level, Constants, and Button class. Much of the work was collaborative between front end and back end. 
+Front-end lead constructed the GUI and controller class for the game. Also aided with classes, specifically the Button class. Much of the work was collaborative between front end and back end. 
 
 ### Back End Specialist - John Paul Alker
 
-Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and aided with the construction of the controller. Much of the work was collaborative between front end and back end. 
+Back-end specialist created Character, Enemy, and Tiles class, and aided with the construction of the controller. Back-end also implemented a network based API to fulfill data permanence. Much of the work was collaborative between front end and back end. 
 
 ## Testing *(Software Lead)*
 * After all of the code was finished for our final project, we pushed everything that we had to github and ran the program. We went through every feature in the game to see if it worked, recording the results in the ATP. For example, the program was to exit after the exit button on the menu was pressed. To see if this worked, we ran the code and clicked on the exit menu button after the program ran. If it worked, the program was to close. When we did end up getting it to close, we pushed the code to github. 
