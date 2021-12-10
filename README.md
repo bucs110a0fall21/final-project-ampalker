@@ -81,6 +81,5 @@ Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and 
 |  6  | Press the d key  | Character moves right |        correct         |
 |  7  | Press the space key  | Character jumps |         correct        |
 |  8  | Press the space key many times | Character jumps many times (double jump feature) |        correct         |
-|  9  | Collide character with an enemy | Character either loses a hitpoint or enemy vanishes |        incorrect         |
-|  10  | Character collides with enemies until it loses all hitpoints or wins game | Character either dies and game over screen appears, or the a game won screen appears, respectively |        incorrect         |
+|  9  | Collide character with an enemy | A "Hit!" and random dog fact will appear, or or a "Miss!" will appear |        correct         |
 |  11  | User exits the program by pressing the exit key | Program closes |        correct         |
