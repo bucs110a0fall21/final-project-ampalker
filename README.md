@@ -74,7 +74,7 @@ Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and 
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
 |  1  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |     correct     |
-|  2  | Click exit button  | Program exits |                 |
+|  2  | Click exit button  | Program exits |         correct        |
 |  3  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |     correct     |
 |  4  | Click start button  | Map appears with character and enemies|         correct        |
 |  5  | Press the a key  | Character moves left |         correct        |
