@@ -1,7 +1,7 @@
 # CS110 Project Proposal
 # Vagabond Game
 ## CS 110 Final Project
-### Fall 2021
+### Fall 2021 Section A0
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
 [project description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
