@@ -43,7 +43,13 @@ Our project is of a game that has an enemy ghost move randomly on the screen. Th
         * https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#
         * Pygame is a game library for python
 * Class Interface Design
+
+    * This is the older class interface
     * ![class diagram](assets/milestone3.png)
+
+
+    * This is the newer class interface
+    * ![class diagram](assets/class structure.png)
 
 ## Project Structure *(Software Lead)*
 
