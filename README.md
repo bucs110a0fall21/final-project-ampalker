@@ -52,7 +52,29 @@ The Project is broken down into the following file structure:
 * bin
     * <all of your python files should go here>
 * assets
-    * <all of your media, i.e. images, font files, etc, should go here)
+   * Menu.png
+   * Vagabond.png
+   * Vagrant Exit.png
+   * Vagrant Start.png
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   
+   
+   
 * etc
     * <This is a catch all folder for things that are not part of your project, but you want to keep with your project. Your demo video should go here.>
 
