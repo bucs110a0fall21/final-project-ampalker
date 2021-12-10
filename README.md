@@ -14,7 +14,7 @@
 ***
 
 ## Project Description *(Software Lead)*
-Our project is of of a game with one main character and enemies that move back and forth. The main character can move horizontally and jump, and get into fights with enemies. When the enemy and main character fight, the main character most likely win the fight, but there is a small chance that he will lose to the enemy. If the main character loses all his health points, the game will be over. If the main character does not, he will win. 
+Our project is of a game that has an enemy ghost move randomly on the screen. The main character has unlimited double jumps (to kill the ghosts) and fights ghosts in the game. When the enemy collides with the ghost, there is a chance that the character himself will die, because he cannot win every battle. In that event, he will lose a hitpoint. After he loses all of his hitpoints, a game over screen will appear. If he kills all enemies on the screen, however, a game won screen will appear.
 
 ***    
 
@@ -73,13 +73,14 @@ Back-end specialist created Character, Door, Enemy, Saver, and Tiles class, and 
 
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
-|  1  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |          |
+|  1  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |     correct     |
 |  2  | Click exit button  | Program exits |                 |
-|  3  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |          |
-|  4  | Click start button  | Map appears with character and enemies|                 |
-|  5  | Press the left arrow key  | Character moves left |                 |
-|  6  | Press the right arrow key  | Character moves right |                 |
-|  7  | Press the space key  | Character jumps |                 |
-|  8  | Collide character with an enemy | Character either loses a hitpoint or enemy vanishes |                 |
-|  9  | Character collides with enemies until it loses all hitpoints or wins game | Character either dies and game over screen appears, or the a game won screen appears, respectively |                 |
-|  10  | User exits the program by pressing the exit key | Program closes |                 |
+|  3  | Run game through terminal  | Menu appears with "Vagrant" title, exit and start screen  |     correct     |
+|  4  | Click start button  | Map appears with character and enemies|         correct        |
+|  5  | Press the a key  | Character moves left |         correct        |
+|  6  | Press the d key  | Character moves right |        correct         |
+|  7  | Press the space key  | Character jumps |         correct        |
+|  8  | Press the space key many times | Character jumps many times (double jump feature) |        correct         |
+|  9  | Collide character with an enemy | Character either loses a hitpoint or enemy vanishes |        incorrect         |
+|  10  | Character collides with enemies until it loses all hitpoints or wins game | Character either dies and game over screen appears, or the a game won screen appears, respectively |        incorrect         |
+|  11  | User exits the program by pressing the exit key | Program closes |        correct         |
