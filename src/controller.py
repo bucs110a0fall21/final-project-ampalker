@@ -5,7 +5,7 @@ from src import Character, Button, Enemy
 from src.Constants import *
 from src.Character import Hero
 from src.Tiles import Tile
-
+import requests
 
 
 
@@ -72,13 +72,23 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
-                print(self.miss_count)
-                print(self.hit_count)
+                #print(self.miss_count)
+                #print(self.hit_count)
             
             result = self.Vagabond.collision(self.enemy)
             
             if result == True:
                 self.hit_count += 1
+                try:
+                    result = requests.get("https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1")
+                except:
+                    print("try again later")
+                    setdefaultvalues()
+                if result.status_code == 200:
+                    response = result.json()
+                    print(response)
+                else:
+                    print("no internet")
             elif result == False:
                 self.miss_count += 1
             
