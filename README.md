@@ -56,33 +56,36 @@ Our project is of a game that has an enemy ghost move randomly on the screen. Th
 The Project is broken down into the following file structure:
 * main.py
 * bin
-    * <all of your python files should go here>
+    * Button.py
+    * Character.py
+    * Constants.py
+    * Enemy.py
+    * Tiles.py
+    * controller.py
+    
 * assets
    * Menu.png
    * Vagabond.png
    * Vagrant Exit.png
    * Vagrant Start.png
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
+   * Vagrant Title PNG.png
+   * Vagrant Title.png
+   * class_diagram.jpg
+   * cobbleSnowBedrock-PNG.png
+   * cobbleSnowBedrock.psd.png
+   * cobbleSnowCornerEdge-PNG.png
+   * cobbleSnowMainRoad-PNG.png
+   * ghost enemy.jpg
+   * ghost.png
+   * guiguiguigui.png
+   * level sketch.png
+   * milestone3.png
+   * vagrant-level-demo.png
    
    
    
 * etc
-    * <This is a catch all folder for things that are not part of your project, but you want to keep with your project. Your demo video should go here.>
+    * demo.mp4
 
 ***
 
