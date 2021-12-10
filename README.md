@@ -6,7 +6,7 @@
 
 [https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#](#)
 
-<< [link to demo presentation slides](#) >>
+<< [link to demo presentation slides](https://docs.google.com/presentation/d/1oAw3T_M4SXxPpZiUHrMQwgNUH4la8D80np7toceEl-4/edit?usp=sharing) >>
 
 ### Team: Ampalker
 #### John Paul Alker, Paul Ampadu
