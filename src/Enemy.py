@@ -1,6 +1,11 @@
 import pygame, random, os
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, x, y, speed):
+		"""
+			sets up instance variables and loads in enemy image
+			args: x (int) - x rect position, y (int) - y rect position, speed (int) - enemy speed
+			return: none
+		"""
 		pygame.sprite.Sprite.__init__(self)
 		image = pygame.image.load(os.path.join('assets','ghost.png'))
 		image = pygame.transform.scale(image,(48,48))
@@ -12,6 +17,11 @@ class Enemy(pygame.sprite.Sprite):
 
 
 	def move(self):
+		"""
+			handles movement of the enemy
+			args: self
+			return: none
+		"""
 		movement_chance = random.randrange(4)
 		if movement_chance == 0:
 			self.rect.x -= 1

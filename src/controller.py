@@ -11,9 +11,13 @@ from src.Tiles import Tile
 
 class Controller:
     def __init__(self):
+        """
+		creates instance variables and loads in important images
+		args: self
+		return: none
+	"""
         pygame.init()
         self.clock = pygame.time.Clock()
-        
         self.screen = pygame.display.set_mode((screen_width,screen_height))
         self.title_img = pygame.image.load(os.path.join('assets', 'Vagrant Title.png'))
         self.start_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Start.png')) 
@@ -23,7 +27,9 @@ class Controller:
         
     def mainloop(self):
         """
-        menu code
+        	code for the menu and handles game and exit loops
+		args: self
+		return: none
         """
         self.title_img = self.title_img.convert_alpha()
         self.title = Button.MakeButton(235,25,self.title_img,2.5)  
@@ -49,7 +55,12 @@ class Controller:
             pygame.display.flip()       
             self.clock.tick(60)     
             
-    def gameloop(self):        
+    def gameloop(self): 
+        """
+		handles rendering the screen after being called in mainloop, gameloop
+		args: self
+		return: none
+	"""       
         while True:
             self.level(level_map,self.screen) 
             self.screen.fill((0,0,0))
@@ -59,17 +70,8 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
-                
-                #if pygame.Rect.colliderect(self.Vagabond, self.enemy):
-                 #   if self.Vagabond.swing_sword() == True:
-                  #      self.enemy.kill()
-                   # elif self.Vagabond.swing_sword() == False:
-                    #    self.gameover()
-
+	    #enemy movement
             self.enemy.move()
-
-
-
 
             #keyboard inputs
             key = pygame.key.get_pressed()
@@ -77,20 +79,32 @@ class Controller:
                 self.Vagabond.movement("Left")
             if key[pygame.K_d]:
                 self.Vagabond.movement("Right")
-            if key[pygame.K_w]:
+            if key[pygame.K_SPACE]:
                 self.Vagabond.movement("Up")
-            if key[pygame.K_s]:
-                self.Vagabond.movement("Down")
+            if key[pygame.K_SPACE] == False:
+                self.Vagabond.movement("None")
+            else:
+                self.Vagabond.movement("None")
                 
                 
             pygame.display.update()
     
     def level(self, level_data, surface):
+        """
+		handles background GUI elements
+		args: level_data (str) - layout for tiles, surface - screen obj
+		return: none
+	"""
         self.display_surface = surface
         self.create_level(level_data)
         self.world_shift = 0
     
     def create_level(self, layout):
+        """
+		creates a renderable layout for tiles
+		args: layout (str) - layout of the level within Constants
+		return: none
+	"""
         self.tiles = pygame.sprite.Group()
         for row_index,row in enumerate(layout):
             for col_index,column in enumerate(row):
@@ -101,13 +115,19 @@ class Controller:
                     self.tiles.add(tile)
 
     def render_level(self):
-        self.tiles.update(self.world_shift)
+        """
+		draws the tiles onto the surface
+		args: self
+		return: none
+	"""
         self.tiles.draw(self.display_surface)                    
 
-    def gameover(self):
-        self.screen.fill('white')
-
     def exitloop(self):
+        """
+		exit loop, exits out of the program
+		args: self
+		return: none
+	"""
         pygame.quit()
         sys.exit()
     
