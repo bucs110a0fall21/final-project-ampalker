@@ -70,6 +70,12 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
+            
+            result = self.Vagabond.collision(self.enemy)
+            if result == True:
+                self.enemy.kill()
+            elif result == False:
+                pass
 	    #enemy movement
             self.enemy.move()
 

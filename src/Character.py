@@ -78,6 +78,9 @@ class Hero(pygame.sprite.Sprite):
 		if swing_chance == 4:
 			print("Miss!")
 			return False
+	def collision(self,other_rect):
+		if pygame.Rect.colliderect(self.rect,other_rect):
+			return self.swing_sword()
 
 
 
