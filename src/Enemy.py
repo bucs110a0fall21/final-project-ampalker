@@ -43,6 +43,8 @@ class Enemy(pygame.sprite.Sprite):
 			return: none
 		"""
 		screen.blit(self.image, self.rect)
+	def kill(self):
+		self.rect.move(-1000,-1000)
 
 
 

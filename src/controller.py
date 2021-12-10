@@ -12,10 +12,10 @@ from src.Tiles import Tile
 class Controller:
     def __init__(self):
         """
-		creates instance variables and loads in important images
-		args: self
-		return: none
-	"""
+		    creates instance variables and loads in important images
+		    args: self
+		    return: none
+	    """
         pygame.init()
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((screen_width,screen_height))
@@ -24,12 +24,14 @@ class Controller:
         self.exit_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Exit.png'))
         self.enemy = Enemy.Enemy(300,300,3)
         self.Vagabond = Character.Hero(48,500)
+        self.miss_count = 0
+        self.hit_count = 0
         
     def mainloop(self):
         """
         	code for the menu and handles game and exit loops
-		args: self
-		return: none
+		    args: self
+		    return: none
         """
         self.title_img = self.title_img.convert_alpha()
         self.title = Button.MakeButton(235,25,self.title_img,2.5)  
@@ -57,10 +59,10 @@ class Controller:
             
     def gameloop(self): 
         """
-		handles rendering the screen after being called in mainloop, gameloop
-		args: self
-		return: none
-	"""       
+		    handles rendering the screen after being called in mainloop, gameloop
+		    args: self
+		    return: none
+	    """       
         while True:
             self.level(level_map,self.screen) 
             self.screen.fill((0,0,0))
@@ -70,12 +72,16 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
+                print(self.miss_count)
+                print(self.hit_count)
             
             result = self.Vagabond.collision(self.enemy)
+            
             if result == True:
-                self.enemy.kill()
+                self.hit_count += 1
             elif result == False:
-                pass
+                self.miss_count += 1
+            
 	    #enemy movement
             self.enemy.move()
 
@@ -97,20 +103,20 @@ class Controller:
     
     def level(self, level_data, surface):
         """
-		handles background GUI elements
-		args: level_data (str) - layout for tiles, surface - screen obj
-		return: none
-	"""
+		    handles background GUI elements
+		    args: level_data (str) - layout for tiles, surface - screen obj
+		    return: none
+	    """
         self.display_surface = surface
         self.create_level(level_data)
         self.world_shift = 0
     
     def create_level(self, layout):
         """
-		creates a renderable layout for tiles
-		args: layout (str) - layout of the level within Constants
-		return: none
-	"""
+		    creates a renderable layout for tiles
+		    args: layout (str) - layout of the level within Constants
+		    return: none
+	    """
         self.tiles = pygame.sprite.Group()
         for row_index,row in enumerate(layout):
             for col_index,column in enumerate(row):
@@ -122,18 +128,18 @@ class Controller:
 
     def render_level(self):
         """
-		draws the tiles onto the surface
-		args: self
-		return: none
-	"""
+		    draws the tiles onto the surface
+		    args: self
+		    return: none
+	    """
         self.tiles.draw(self.display_surface)                    
 
     def exitloop(self):
         """
-		exit loop, exits out of the program
-		args: self
-		return: none
-	"""
+		    exit loop, exits out of the program
+		    args: self
+		    return: none
+	    """
         pygame.quit()
         sys.exit()
     

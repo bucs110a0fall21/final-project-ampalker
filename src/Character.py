@@ -60,25 +60,33 @@ class Hero(pygame.sprite.Sprite):
 		"""
 			returns true for if the character successfully swings sword with 2/5 chance of missing
 			args: self
-			return: bool
+			return: hit (bool)
 		"""
+		hit = None
 		swing_chance = random.randrange(5)
 		if swing_chance == 0:
 			print("Hit!")
-			return True
+			hit = True
 		if swing_chance == 1:
 			print("Hit!")
-			return True
+			hit = True
 		if swing_chance == 2:
 			print("Hit!")
-			return True
+			hit = True
 		if swing_chance == 3:
 			print("Miss!")
-			return False
+			hit = False
 		if swing_chance == 4:
 			print("Miss!")
-			return False
+			hit = False
+		return hit
+	
 	def collision(self,other_rect):
+		"""
+			checks for collisions between rectangles
+			args: self, other_rect
+			return: self.swing_sword()
+		"""
 		if pygame.Rect.colliderect(self.rect,other_rect):
 			return self.swing_sword()
 
