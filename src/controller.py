@@ -18,7 +18,7 @@ class Controller:
         self.title_img = pygame.image.load(os.path.join('assets', 'Vagrant Title.png'))
         self.start_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Start.png')) 
         self.exit_button_img = pygame.image.load(os.path.join('assets', 'Vagrant Exit.png'))
-        #self.enemy = Enemy.Enemy()
+        self.enemy = Enemy.Enemy(300,300,3)
         self.Vagabond = Character.Hero(48,500)
         
     def mainloop(self):
@@ -55,9 +55,21 @@ class Controller:
             self.screen.fill((0,0,0))
             self.render_level()
             self.Vagabond.update(self.screen)
+            self.enemy.update(self.screen)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.exitloop()
+                
+                if pygame.Rect.colliderect(self.Vagabond, self.enemy):
+                    if self.Vagabond.swing_sword() == True:
+                        self.enemy.kill()
+                    elif self.Vagabond.swing_sword() == False:
+                        self.gameover()
+
+            self.enemy.move()
+
+
+
 
             #keyboard inputs
             key = pygame.key.get_pressed()
@@ -91,6 +103,9 @@ class Controller:
     def render_level(self):
         self.tiles.update(self.world_shift)
         self.tiles.draw(self.display_surface)                    
+
+    def gameover(self):
+        self.screen.fill('white')
 
     def exitloop(self):
         pygame.quit()

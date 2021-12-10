@@ -1,10 +1,10 @@
-import pygame
-import random
-
+import pygame, random, os
 class Enemy(pygame.sprite.Sprite):
-	def __init__(self, x, y, image, speed):
+	def __init__(self, x, y, speed):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load(image).convert_alpha()
+		image = pygame.image.load(os.path.join('assets','ghost.png'))
+		image = pygame.transform.scale(image,(48,48))
+		self.image = image.convert_alpha()
 		self.rect = self.image.get_rect()
 		self.speed = speed
 		self.rect.x = x
@@ -25,7 +25,14 @@ class Enemy(pygame.sprite.Sprite):
 		elif movement_chance == 3:
 			self.rect.x = self.rect.x
 			self.rect.y += 1
-
+			
+	def update(self,screen):
+		"""
+			makes the character show up on screen
+			args: self
+			return: none
+		"""
+		screen.blit(self.image, self.rect)
 
 
 
